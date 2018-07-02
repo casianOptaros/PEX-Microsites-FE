@@ -1,0 +1,39 @@
+<!--
+/**
+ * PartyLite_Microsites
+ *
+ * @category    PartyLite
+ * @package     PartyLite_Microsites
+ * @copyright   Copyright (c) 2018 Optaros
+ * @author      Casian Daniel Suciu <dsuciu@optaros.com>
+ */
+ -->
+
+
+<div class="sections party-box">
+    <div class="party-status">
+        <p id="orders-status"><?php /* @escapeNotVerified */ echo __("Party starts in") ?> :</p>
+        <p id="party-status"><?php /* @escapeNotVerified */ echo __("Get Excited") ?>!</p>
+    </div>
+    <div id="party-countdown"></div>
+</div>
+
+<script>
+    require(['jquery', 'jCountdown', 'mage/translate'], function ($) {
+        $('#party-countdown').countdown('2018/10/26 22:00:56')
+            .on('update.countdown', function(event) {
+                var $this = $(this).html(event.strftime(''
+                    + "<div class='section'><div class='time'>%D</div> <div>"+$.mage.__('days')+"</div></div>"
+                    + "<div class='section'><div class='time'> : </div></div>"
+                    + "<div class='section'><div class='time'>%H</div> <div>"+$.mage.__('hours')+"</div></div>"
+                    + "<div class='section'><div class='time'> : </div></div>"
+                    + "<div class='section'><div class='time'>%M</div> <div>"+$.mage.__('minutes')+"</div></div>"));
+            })
+            .on('finish.countdown', function(event) {
+                var orders = $.mage.__('Party Orders closed');
+                var party = $.mage.__('Party Orders closed');
+                $(this).parent().find('#order-status').html(orders);
+                $(this).parent().find('#party-status').html(party);
+            });
+    })
+</script>

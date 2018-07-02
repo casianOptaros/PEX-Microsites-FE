@@ -1,0 +1,24 @@
+{
+  "name": "partylite/module-microsites",
+  "description": "PartyLite Microsites - PEXB",
+
+  "type": "magento2-module",
+  "version": "1.0.0",
+  "license": "proprietary",
+  "authors": [
+    {
+      "name": "Casian Daniel Suciu",
+      "email": "dsuciu@optaros.com"
+    }
+  ],
+
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "PartyLite\\Microsites\\": ""
+    }
+  }
+
+}

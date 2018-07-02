@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="header.container">
+            <container name="pex.header.panel.wrapper" htmlClass="panel wrapper" htmlTag="div" before="-">
+                <container name="pex_header" as="pex_header" label="HomePage" htmlTag="div" htmlClass="pex-header">
+                    <block class="PartyLite\Microsites\Block\Display" name="main_display" template="PartyLite_Microsites::header.phtml" cacheable="false"/>
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <container name="pex_main" as="pex_main" label="HomePage" htmlTag="div" htmlClass="pex-main">
+                <block class="PartyLite\Microsites\Block\Display" name="counter" template="PartyLite_Microsites::counter.phtml" cacheable="false"/>
+
+                <container name="profile" as="profile" label="Consultant Profile" htmlTag="div" htmlClass="sections consultant-profile">
+                    <block class="PartyLite\Microsites\Block\Display" name="consultant" template="PartyLite_Microsites::profile.phtml" cacheable="false"/>
+                </container>
+
+                <!--TODO: this widget will be replaced by a new one -->
+                <container name="best_sellers" as="best_sellers" label="Best Sellers" htmlTag="div" htmlClass="sections products-widget" after="share_celebrate">
+                    <container name="best_sellers_main_container" as="best_sellers_main_container" label="Best Sellers Main Container" htmlTag="div" htmlClass="main-container" before="-">
+                        <block class="Magento\Cms\Block\Block" name="WidgetBestsellers">
+                            <arguments>
+                                <argument name="block_id" xsi:type="string">cms_block-widget_bestsellers</argument>
+                            </arguments>
+                        </block>
+                    </container>
+                </container>
+
+                <!--TODO: this static block will be replaced by a new one -->
+                <block class="Magento\Cms\Block\Block" name="ExclusiveOffers">
+                    <arguments>
+                        <argument name="block_id" xsi:type="string">exclusive_offers</argument>
+                    </arguments>
+                </block>
+
+                <container name="cms_homepage" as="cms_homepage" label="HomePage" htmlTag="div" htmlClass="sections homepage_v1">
+                    <container name="articles" as="articles" label="Articles" htmlTag="div" htmlClass="section-elm cms_block-article">
+                        <container name="article_main_container" as="article_main_container" label="Article Main Container" htmlTag="div" htmlClass="main-container" before="-">
+                            <!--TODO: this static block will be replaced by a new one -->
+                            <block class="Magento\Cms\Block\Block" name="Articles">
+                                <arguments>
+                                    <argument name="block_id" xsi:type="string">cms_block-article</argument>
+                                </arguments>
+                            </block>
+                        </container>
+                    </container>
+                </container>
+            </container>
+        </referenceContainer>
+        <referenceContainer name="footer-container">
+            <container name="footer-pex-section" label="Page Footer" as="footer-pex-wrapper" htmlTag="section" htmlClass="networking">
+                <container htmlTag="div" htmlClass="main-container">
+                    <container htmlTag="div" htmlClass="contentText">
+                        <container name="footer-social-media" htmlTag="div" htmlClass="social-media"></container>
+                        <container htmlTag="div" htmlClass="back-to-top">
+                            <block class="Magento\Framework\View\Element\Template" name="back-to-top" template="PartyLite_Microsites::scroll_to_top.phtml" />
+                        </container>
+                    </container>
+                </container>
+                <container htmlTag="div" htmlClass="privacy-link">
+                    <block class="Magento\Framework\View\Element\Html\Link" name="contact-link">
+                        <arguments>
+                            <argument name="label" xsi:type="string" translate="true">Privacy Policy</argument>
+                            <argument name="path" xsi:type="string" translate="true">privacy-policy-cookie-restriction-mode</argument>
+                        </arguments>
+                    </block>
+                </container>
+            </container>
+        </referenceContainer>
+        <move element="copyright" destination="footer-pex-section" after="footer-social-media" />
+
+        <referenceContainer name="footer-custom-section" remove="true" />
+        <referenceContainer name="pl_useful_links" remove="true" />
+        <referenceContainer name="scroll-to-top" remove="true" />
+        <referenceContainer name="header.panel.wrapper" remove="true" />
+        <referenceContainer name="header-wrapper" remove="true" />
+        <referenceContainer name="page.top" remove="true" />
+        <referenceContainer name="top.container" remove="true" />
+        <referenceContainer name="page.messages" remove="true" />
+
+
+    </body>
+</page>

@@ -1,0 +1,36 @@
+<!--
+/**
+ * PartyLite_Microsites
+ *
+ * @category    PartyLite
+ * @package     PartyLite_Microsites
+ * @copyright   Copyright (c) 2018 Optaros
+ * @author      Casian Daniel Suciu <dsuciu@optaros.com>
+ */
+ -->
+
+
+<?php
+    $json = '{"Email":"jessess1980@gmail.com","Phone Number":"07712345678","Facebook":"Facebook ID","Instagram":"Instagram ID","Skype":"Skype ID"}';
+    $partyHashtag = "#jessicashousewarmingparty";
+?>
+
+<div class="contact">
+    <img src="<?php echo $block->getViewFileUrl('PartyLite_Microsites::images/jessica.png'); ?>" />
+    <p class="title"><?php /* @escapeNotVerified */ echo __("Contact Details") ?></p>
+    <?php foreach (json_decode($json) as $k => $v) : ?>
+        <p>
+            <span><?php /* @escapeNotVerified */ echo __( $k ) ?>: </span>
+            <a href="#" target="_self" title="<?php echo $k ?>" tabindex="0"><span><?php echo $v ?></span></a>
+        </p>
+    <?php endforeach; ?>
+    <p class="party-hashtag"><?php /* @escapeNotVerified */ echo __($partyHashtag) ?></p>
+</div>
+<div class="description">
+    <div class="title"><?php /* @escapeNotVerified */ echo __("Let's have a Party") ?></div>
+    <div class="text"><?php /* @escapeNotVerified */ echo __("Lorem ipsum dolor sit amet, ut vel clita pericula corrumpit, ne aperiri nusquam duo. Facer latine impetus ne sea, wisi latine erroribus eam an. Cum saepe pertinacia in, mundi deserunt vis ex. Sed iudico blandit et, his ut oblique placerat philosophia. Latine evertitur referrentur has ei, te prima ubique pri. Eius doctus persius mel ne, veniam eirmod delicata ut duo, inani phaedrum principes ea eam. Graece impetus cu eum, per ut stet case.") ?></div>
+    <div class="greetings"><?php /* @escapeNotVerified */ echo __("Hope you can join me") ?>!</div>
+    <div class="actions">
+        <a href="#" class="buttonLink"><span><?php /* @escapeNotVerified */ echo __("Get in touch with Jessica") ?></span></a>
+    </div>
+</div>

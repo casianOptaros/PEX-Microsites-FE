@@ -1,0 +1,56 @@
+<!--
+/**
+ * PartyLite_Microsites
+ *
+ * @category    PartyLite
+ * @package     PartyLite_Microsites
+ * @copyright   Copyright (c) 2018 Optaros
+ * @author      Casian Daniel Suciu <dsuciu@optaros.com>
+ */
+ -->
+
+
+<?php
+
+    $partyTitle = "Jessica's Virtual Housewarming Party";
+    $partyDate = "2:00 pm Monday 17th May 2018";
+    $partyLink = "The virtual party link goes here";
+    $partyHashtag = "#jessicashousewarmingparty";
+?>
+
+<?php
+    /** @var $block PartyLite\SocialMedia\Block\Links */
+    /** @var PartyLite\SocialMedia\Helper\Data $helper */
+    $helper = $this->helper('PartyLite\SocialMedia\Helper\Data');
+?>
+
+<div class="pex-header-block"></div>
+<div class="pex-info-party">
+    <div class="info-box">
+        <h3 class="main-title"><?php /* @escapeNotVerified */ echo __($partyTitle) ?></h3>
+        <p class="party-date"><?php /* @escapeNotVerified */ echo __($partyDate) ?></p>
+        <p class="party-link"><?php /* @escapeNotVerified */ echo __($partyLink) ?></p>
+        <p class="party-hashtag"><?php /* @escapeNotVerified */ echo __($partyHashtag) ?></p>
+    </div>
+    <div class="share-box">
+        <div class="social-media">
+            <span><?php /* @escapeNotVerified */ echo __("Share") ?></span>
+            <ul class="footer-social-media-links">
+                <li class="social-media-link-item">
+                    <a href="https://www.facebook.com/partylite/" data-social="facebook"><span>Facebook</span></a>
+                </li>
+                <li class="social-media-link-item">
+                    <a href="https://www.instagram.com/partylite/" data-social="instagram"><span>Instagram</span></a>
+                </li>
+                <li class="social-media-link-item">
+                    <a href="https://pinterest.com/partylite/" data-social="pinterest"><span>Pinterest</span></a>
+                </li>
+            </ul>
+        </div>
+        <div class="actionLink">
+            <a class="buttonLink" href="#" target="_self" title="Book My Party !" tabindex="0">
+                <span><?php /* @escapeNotVerified */ echo __("Book My Party") ?></span>
+            </a>
+        </div>
+    </div>
+</div>
